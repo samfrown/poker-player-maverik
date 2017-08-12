@@ -35,6 +35,7 @@ public class GetRate {
         builder.append("]");
 
         String body = builder.toString();
+        System.err.println("MAVERIK LOG:" + body);
 
         String url = "http://rainman.leanpoker.org/rank";
 
