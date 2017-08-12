@@ -90,6 +90,10 @@ public class Player {
             int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt() - getPlayerBet(req, "Maverik");
 
             if (c.getRating() == 0) {
+                if (round == 0 && numPlayers(req) == 2) {
+                    System.err.println("Maverik num = 2");
+                    return req.getAsJsonObject().get("minimum_raise").getAsInt();
+                }
                 return 0;
             }
 
@@ -186,6 +190,17 @@ public class Player {
         }
         System.err.println();
         return 0;
+    }
+
+    public static int numPlayers(JsonElement request) {
+        JsonArray players = request.getAsJsonObject().get("players").getAsJsonArray();
+        int count = 0;
+        for (JsonElement player: players) {
+            if (player.getAsJsonObject().get("status").getAsString().equalsIgnoreCase("active")) {
+                count++;
+            }
+        }
+        return count;
     }
 
 }
