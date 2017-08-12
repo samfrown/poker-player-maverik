@@ -25,6 +25,15 @@ public class Cards {
     }
 
     public int getRating() {
-        return 1;
+        Card card1 = cards.get(0);
+        Card card2 = cards.get(1);
+
+        if (card1.getRank() == card2.getRank()) {
+            return 1;
+        }
+
+        if (card1.getSuit().equals(card2.getSuit())) {
+            return 1;
+        }
     }
 }
