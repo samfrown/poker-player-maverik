@@ -14,7 +14,7 @@ public class Player {
     static final String NAME = "Maverik";
 
     public static int betRequest(JsonElement request) {
-        return ddd(request);
+        return fff(request);
     }
 
     public static void showdown(JsonElement game) {
@@ -27,6 +27,8 @@ public class Player {
 
             int round = req.getAsJsonObject().get("round").getAsInt();
             int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt();
+
+            System.err.println("HASTER");
 
             int ourBet = 200;
 
@@ -73,11 +75,9 @@ public class Player {
                 ourBet = 1000;
             }
 
-            if (maxBet > ourBet) {
+
                 return maxBet;
-            } else {
-                return ourBet;
-            }
+
         } catch (Exception e) {
             System.err.println(e.getMessage());
 
@@ -104,6 +104,16 @@ public class Player {
     }
 
     public static JsonElement getMyPlayer(JsonElement request) {
+        JsonArray players = request.getAsJsonObject().get("players").getAsJsonArray();
+        for (JsonElement player: players) {
+            if (player.getAsJsonObject().get("name").getAsString().equalsIgnoreCase(NAME)) {
+                return player;
+            }
+        }
+        return null;
+    }
+
+    public static JsonElement getPlayer(JsonElement request) {
         JsonArray players = request.getAsJsonObject().get("players").getAsJsonArray();
         for (JsonElement player: players) {
             if (player.getAsJsonObject().get("name").getAsString().equalsIgnoreCase(NAME)) {
