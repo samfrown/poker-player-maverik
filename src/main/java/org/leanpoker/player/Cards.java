@@ -24,4 +24,7 @@ public class Cards {
         return cards;
     }
 
+    public int getRating() {
+        return 1;
+    }
 }
