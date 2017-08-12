@@ -69,8 +69,11 @@ public class Player {
                 ourBet = 1000;
             }
 
-
+            if (maxBet > ourBet) {
                 return maxBet;
+            } else {
+                return ourBet;
+            }
 
         } catch (Exception e) {
             System.err.println(e.getMessage());
