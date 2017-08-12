@@ -23,11 +23,13 @@ public class Player {
             int r = GetRate.get(c.getCarts());
 
             int round = req.getAsJsonObject().get("round").getAsInt();
-            int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt();
+            int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt() - getPlayerBet(req, "Maverik");
 
             System.err.println("MAVERIK raiting from api" + Integer.toString(r));
 
             int ourBet = 200;
+
+
 
             if (r < 1) {
                 return 0;
@@ -85,10 +87,17 @@ public class Player {
         try {
             Cards c = getMyCards(req);
             int round = req.getAsJsonObject().get("round").getAsInt();
-            int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt() - getPlayerBet(req, "Maverik");;
+            int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt() - getPlayerBet(req, "Maverik");
 
             if (c.getRating() == 0) {
                 return 0;
+            }
+
+            if (c.getCarts().size() > 4) {
+                int r = GetRate.get(c.getCarts());
+                if (r == 0) {
+                    return 0;
+                }
             }
 
             if (c.getRating() == 1) {
