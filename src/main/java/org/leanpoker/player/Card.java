@@ -2,10 +2,13 @@ package org.leanpoker.player;
 
 public class Card {
     private String suit;
+    private String rankStr;
 
     public String getSuit() {
         return suit;
     }
+
+    public String getRankStr() {return rankStr;}
 
     public void setSuit(String suit) {
         this.suit = suit;
@@ -30,6 +33,7 @@ public class Card {
     public Card(String suit, String rankStr) {
         this.suit = suit;
         this.rank = getRandFromString(rankStr);
+        this.rankStr = rankStr;
     }
 
     public static int getRandFromString(String ranksym) {
@@ -48,6 +52,10 @@ public class Card {
             }
         }
         return  newrank;
+    }
+
+    public String toString() {
+        return String.format("{\"rank\":\"{}\",\"suit\":\"{}\"}", rankStr, suit);
     }
 
 }
