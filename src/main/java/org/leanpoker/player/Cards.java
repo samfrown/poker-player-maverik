@@ -35,5 +35,6 @@ public class Cards {
         if (card1.getSuit().equals(card2.getSuit())) {
             return 1;
         }
+        return 0;
     }
 }
