@@ -22,6 +22,7 @@ public class Player {
 
     static int ddd(JsonElement req) {
         try {
+            Cards c = getMyCards(req);
             int r = GetRate.get(c.getCarts());
 
             int round = req.getAsJsonObject().get("round").getAsInt();
