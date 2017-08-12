@@ -119,6 +119,7 @@ public class Player {
                 ourBet = 1000;
             }
 
+            ourBet = ourBet - getPlayerBet(req, "Maverik");
             if (maxBet > ourBet) {
                 return maxBet;
             } else {
