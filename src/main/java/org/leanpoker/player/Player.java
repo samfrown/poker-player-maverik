@@ -85,14 +85,17 @@ public class Player {
     static int newstr(JsonElement req) {
         try {
             Cards c = getMyCards(req);
+            System.err.println(req.toString());
+            int round = req.getAsJsonObject().get("round").getAsInt();
+            int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt();
 
             if (c.getRating() == 0) {
                 return 0;
             }
 
-            System.err.println(req.toString());
-            int round = req.getAsJsonObject().get("round").getAsInt();
-            int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt();
+            if (c.getRating() == 1) {
+                return maxBet;
+            }
 
             int ourBet = 200;
 
