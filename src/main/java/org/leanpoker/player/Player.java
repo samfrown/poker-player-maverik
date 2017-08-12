@@ -14,6 +14,13 @@ public class Player {
     static final String NAME = "Maverik";
 
     public static int betRequest(JsonElement request) {
+        try{
+            Cards my = getMyCards(request);
+            System.err.println("Cards");
+            System.err.println(my.toString());
+        }catch (Exception e) {
+            System.err.println(e.getMessage());
+        };
         return fff(request);
     }
 
