@@ -49,7 +49,7 @@ public class Player {
 
         }catch (Exception e) {
             System.err.println(e.getMessage());
-            return fff(req);
+            return newstr(req);
         }
     }
 
@@ -79,6 +79,41 @@ public class Player {
             System.err.println(e.getMessage());
 
             return 1000;
+        }
+    }
+
+    static int newstr(JsonElement req) {
+        try {
+            Cards c = getMyCards(req);
+
+            if (c.getRating() == 0) {
+                return 0;
+            }
+
+            System.err.println(req.toString());
+            int round = req.getAsJsonObject().get("round").getAsInt();
+            int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt();
+
+            int ourBet = 200;
+
+            if (round == 0) {
+
+            } else if (round < 3) {
+                ourBet = 500;
+            } else {
+                ourBet = 1000;
+            }
+
+            if (maxBet > ourBet) {
+                return maxBet;
+            } else {
+                return ourBet;
+            }
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+
+            return fff(req);
         }
     }
 

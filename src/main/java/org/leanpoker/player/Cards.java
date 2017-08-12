@@ -35,6 +35,12 @@ public class Cards {
         if (card1.getSuit().equals(card2.getSuit())) {
             return 1;
         }
+
+        int rank = card1.getRank();
+        int rank1 = card2.getRank();
+        if (rank > 12 || rank1 > 12) {
+            return 1;
+        }
         return 0;
     }
 }
