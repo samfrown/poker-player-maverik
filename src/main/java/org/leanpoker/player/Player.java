@@ -98,9 +98,7 @@ public class Player {
                 if (r == 0) {
                     return 0;
                 }
-            }
-
-            if (c.getRating() == 1) {
+            } else if (c.getRating() == 1) {
                 int playerBet = getPlayerBet(req, "Wise Kaa 2");
                 if (playerBet > 4) {
                     return 0;
