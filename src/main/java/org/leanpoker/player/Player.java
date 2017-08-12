@@ -11,8 +11,7 @@ public class Player {
     static final String NAME = "Maverik";
 
     public static int betRequest(JsonElement request) {
-        System.err.println(request.toString());
-        return ddd(request);
+        return newstr(request);
     }
 
     public static void showdown(JsonElement game) {
@@ -160,6 +159,17 @@ public class Player {
     public int getRating(Cards cards) {
         return cards.getRating();
 
+    }
+
+    public static int getPlayerBet(JsonElement request, String name) {
+        JsonArray players = request.getAsJsonObject().get("players").getAsJsonArray();
+        for (JsonElement player: players) {
+            if (player.getAsJsonObject().get("name").getAsString().equalsIgnoreCase(name)) {
+                return player.getAsJsonObject().get("bet").getAsInt();
+            }
+        }
+        System.err.println();
+        return 0;
     }
 
 }
