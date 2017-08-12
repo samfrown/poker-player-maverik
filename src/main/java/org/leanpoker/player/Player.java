@@ -94,8 +94,6 @@ public class Player {
             int round = req.getAsJsonObject().get("round").getAsInt();
             int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt();
 
-            if
-
             int ourBet = 200;
 
             if (round == 0) {
