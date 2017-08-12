@@ -32,7 +32,7 @@ public class Cards {
         if (card1.getRank() == card2.getRank()) {
             rating = 1;
         }
-
+/*
         if (card1.getSuit().equals(card2.getSuit())) {
             rating = 1;
         }
@@ -42,7 +42,7 @@ public class Cards {
         if (rank > 12 || rank1 > 12) {
             rating = 1;
         }
-
+*/
         System.err.println("Maverik " + Integer.toString(rating));
 
         return rating;
