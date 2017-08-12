@@ -85,7 +85,7 @@ public class Player {
         try {
             Cards c = getMyCards(req);
             int round = req.getAsJsonObject().get("round").getAsInt();
-            int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt();
+            int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt() - getPlayerBet(req, "Maverik");;
 
             if (c.getRating() == 0) {
                 return 0;
