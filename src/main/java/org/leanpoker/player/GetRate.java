@@ -20,7 +20,7 @@ public class GetRate {
 
     static public int get(List<Card> cards) throws IOException {
         StringBuilder builder = new StringBuilder();
-        builder.append("[");
+        builder.append("cards=[");
 
         int len = cards.size();
         int i = 0;
