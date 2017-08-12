@@ -94,11 +94,12 @@ public class Player {
             int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt() - getPlayerBet(req, "Maverik");
             System.err.println("MAXBET = " + Integer.toString(maxBet));
 
+
             if (c.getRating() == 0) {
                 if (round == 0 && numPlayers(req) == 2) {
                     System.err.println("Maverik num = 2");
 
-                    return req.getAsJsonObject().get("minimum_raise").getAsInt();
+                    return 50;
                 }
                 return 0;
             }
