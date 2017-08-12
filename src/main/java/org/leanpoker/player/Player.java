@@ -105,6 +105,9 @@ public class Player {
                 if (playerBet > 4) {
                     return 0;
                 } else {
+                    if (round == 0 && maxBet > 100) {
+                        return 0;
+                    }
                     return maxBet;
                 }
             }
