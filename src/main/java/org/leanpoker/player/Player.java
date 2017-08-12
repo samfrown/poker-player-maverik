@@ -14,21 +14,47 @@ public class Player {
     static final String NAME = "Maverik";
 
     public static int betRequest(JsonElement request) {
-        try{
-            Cards my = getMyCards(request);
-            System.err.println("Cards");
-            System.err.println(my.toString());
-        }catch (Exception e) {
-            System.err.println(e.getMessage());
-        };
-        return fff(request);
+        return ddd(request);
     }
 
     public static void showdown(JsonElement game) {
     }
 
     static int ddd(JsonElement req) {
+        Cards c = getMyCards(req);
+        try {
+            int r = GetRate.get(c.getCarts());
 
+            int round = req.getAsJsonObject().get("round").getAsInt();
+            int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt();
+
+            int ourBet = 200;
+
+            if (r < 1) {
+                return 0;
+            }
+
+            if (round == 0) {
+
+            } else if (round < 3) {
+                ourBet = 500;
+            } else {
+                ourBet = 1000;
+            }
+
+            if (maxBet > ourBet) {
+                return maxBet;
+            } else {
+                return ourBet;
+            }
+
+        }catch (Exception e) {
+
+
+            System.err.println(e.getMessage());
+
+            return 1000;
+        }
     }
 
     static int fff(JsonElement req) {
