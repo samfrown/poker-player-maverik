@@ -160,14 +160,4 @@ public class Player {
 
     }
 
-    private boolean needFold(JsonElement request) {
-        String NAME = "Wise Kaa 2";
-        JsonArray players = request.getAsJsonObject().get("players").getAsJsonArray();
-        for (JsonElement player: players) {
-            if (player.getAsJsonObject().get("name").getAsString().equalsIgnoreCase(NAME)) {
-                
-            }
-        }
-    }
-
 }
