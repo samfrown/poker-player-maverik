@@ -46,6 +46,7 @@ public class GetRate {
 
         //add request header
         con.setRequestProperty("User-Agent", "Mozilla/5.0");
+        con.setRequestProperty("Content-Length", Integer.toString(body.length()));
 
 
         con.setDoOutput(true);
