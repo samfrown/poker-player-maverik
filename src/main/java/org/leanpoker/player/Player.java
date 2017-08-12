@@ -91,6 +91,7 @@ public class Player {
             Cards c = getMyCards(req);
             int round = req.getAsJsonObject().get("round").getAsInt();
             int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt() - getPlayerBet(req, "Maverik");
+            System.err.println("MAXBET = " + Integer.toString(maxBet));
 
             if (c.getRating() == 0) {
                 if (round == 0 && numPlayers(req) == 2) {
@@ -129,8 +130,10 @@ public class Player {
 
             ourBet = ourBet - getPlayerBet(req, "Maverik");
             if (maxBet > ourBet) {
+                System.err.println("XXXX = " + Integer.toString(maxBet));
                 return maxBet;
             } else {
+                System.err.println("OURBET = " + Integer.toString(maxBet));
                 return ourBet;
             }
 
