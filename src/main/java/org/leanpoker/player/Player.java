@@ -90,6 +90,7 @@ public class Player {
             System.err.println("NEW STRATAGY");
             Cards c = getMyCards(req);
             int round = req.getAsJsonObject().get("round").getAsInt();
+            int ourIn = getPlayerBet(req, "Maverik");
             int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt() - getPlayerBet(req, "Maverik");
             System.err.println("MAXBET = " + Integer.toString(maxBet));
 
@@ -116,6 +117,7 @@ public class Player {
                         return 0;
                     }
                     System.err.println("YYYY = " + Integer.toString(maxBet));
+                    System.err.println("YYYY2 = " + Integer.toString(ourIn));
                     return maxBet;
                 }
             }
@@ -132,11 +134,14 @@ public class Player {
 
             ourBet = ourBet - getPlayerBet(req, "Maverik");
             System.err.println("????? = " + Integer.toString(ourBet));
+            System.err.println("ourin = " + Integer.toString(ourIn));
             if (maxBet > ourBet) {
                 System.err.println("XXXX = " + Integer.toString(maxBet));
+                System.err.println("ourin = " + Integer.toString(ourIn));
                 return maxBet;
             } else {
                 System.err.println("OURBET = " + Integer.toString(ourBet));
+                System.err.println("eryery = " + Integer.toString(ourIn));
                 return ourBet;
             }
 
