@@ -11,6 +11,7 @@ public class Player {
     static final String NAME = "Maverik";
 
     public static int betRequest(JsonElement request) {
+        System.err.println(request.toString());
         return ddd(request);
     }
 
@@ -25,7 +26,7 @@ public class Player {
             int round = req.getAsJsonObject().get("round").getAsInt();
             int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt();
 
-            System.err.println("HASTER" + Integer.toString(r));
+            System.err.println("MAVERIK raiting from api" + Integer.toString(r));
 
             int ourBet = 200;
 
@@ -55,7 +56,6 @@ public class Player {
 
     static int fff(JsonElement req) {
         try {
-            System.err.println(req.toString());
             int round = req.getAsJsonObject().get("round").getAsInt();
             int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt();
 
@@ -85,7 +85,6 @@ public class Player {
     static int newstr(JsonElement req) {
         try {
             Cards c = getMyCards(req);
-            System.err.println(req.toString());
             int round = req.getAsJsonObject().get("round").getAsInt();
             int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt();
 
