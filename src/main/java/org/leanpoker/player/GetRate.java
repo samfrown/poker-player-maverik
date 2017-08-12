@@ -61,12 +61,12 @@ public class GetRate {
                 new InputStreamReader(con.getInputStream()));
         String inputLine;
         StringBuffer response = new StringBuffer();
-
         while ((inputLine = in.readLine()) != null) {
             response.append(inputLine);
         }
         in.close();
-        JsonElement el = new JsonParser().parse(inputLine);
+        System.err.println("MAVERIK LOG RESP: " + response.toString());
+        JsonElement el = new JsonParser().parse(response.toString());
         return el.getAsJsonObject().get("rank").getAsInt();
     }
 }
