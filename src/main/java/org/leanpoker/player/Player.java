@@ -14,7 +14,7 @@ public class Player {
     static final String NAME = "Maverik";
 
     public static int betRequest(JsonElement request) {
-        return fff(request);
+        return ddd(request);
     }
 
     public static void showdown(JsonElement game) {

@@ -15,8 +15,8 @@ public class Cards {
 
     public void add(JsonArray cardsJson) {
         for(int i = 0; i < cardsJson.size(); i++) {
-            cards.add(new Card(cardsJson.getAsJsonObject().get("suit").getAsString(),
-                               cardsJson.getAsJsonObject().get("rank").getAsString()));
+            cards.add(new Card(cardsJson.get(i).getAsJsonObject().get("suit").getAsString(),
+                               cardsJson.get(1).getAsJsonObject().get("rank").getAsString()));
         }
     }
 
