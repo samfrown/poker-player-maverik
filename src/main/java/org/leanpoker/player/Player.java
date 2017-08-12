@@ -21,7 +21,7 @@ public class Player {
         try {
             System.err.println(req.toString());
             int round = req.getAsJsonObject().get("round").getAsInt();
-            int maxBet = req.getAsJsonObject().get("current_by_in").getAsInt();
+            int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt();
 
             int ourBet = 200;
 
