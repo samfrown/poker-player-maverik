@@ -14,14 +14,13 @@ public class Player {
     static final String NAME = "Maverik";
 
     public static int betRequest(JsonElement request) {
-        return ddd(request);
+        return fff(request);
     }
 
     public static void showdown(JsonElement game) {
     }
 
     static int ddd(JsonElement req) {
-        Cards c = getMyCards(req);
         try {
             int r = GetRate.get(c.getCarts());
 
