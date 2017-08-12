@@ -2,10 +2,6 @@ package org.leanpoker.player;
 
 import com.google.gson.JsonElement;
 
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.List;
 import java.util.Map;
 
 public class Player {
@@ -20,7 +16,6 @@ public class Player {
     public static void showdown(JsonElement game) {
     }
 }
-
 
 int getCardRank(List<Card> cards) {
 
