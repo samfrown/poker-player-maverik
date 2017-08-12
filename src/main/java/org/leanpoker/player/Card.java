@@ -27,4 +27,27 @@ public class Card {
         this.rank = rank;
     }
 
+    public Card(String suit, String rankStr) {
+        this.suit = suit;
+        this.rank = getRandFromString(rankStr);
+    }
+
+    public static int getRandFromString(String ranksym) {
+        int newrank = 2;
+        try {
+            newrank = Integer.valueOf(ranksym);
+        } catch (IllegalArgumentException e) {
+            if ( ranksym.equalsIgnoreCase("j")) {
+                newrank = 11;
+            } else if (ranksym.equalsIgnoreCase("q")) {
+                newrank = 12;
+            } else if (ranksym.equalsIgnoreCase("k")) {
+                newrank = 13;
+            } else if (ranksym.equalsIgnoreCase("a")) {
+                newrank = 14;
+            }
+        }
+        return  newrank;
+    }
+
 }
