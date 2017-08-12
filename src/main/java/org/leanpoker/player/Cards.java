@@ -25,22 +25,26 @@ public class Cards {
     }
 
     public int getRating() {
+        int rating  = 0;
         Card card1 = cards.get(0);
         Card card2 = cards.get(1);
 
         if (card1.getRank() == card2.getRank()) {
-            return 1;
+            rating = 1;
         }
 
         if (card1.getSuit().equals(card2.getSuit())) {
-            return 1;
+            rating = 1;
         }
 
         int rank = card1.getRank();
         int rank1 = card2.getRank();
         if (rank > 12 || rank1 > 12) {
-            return 1;
+            rating = 1;
         }
-        return 0;
+
+        System.err.println("Maverik " + Integer.toString(rating));
+
+        return rating;
     }
 }
