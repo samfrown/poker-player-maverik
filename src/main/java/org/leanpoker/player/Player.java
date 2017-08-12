@@ -19,6 +19,7 @@ public class Player {
 
     static int ddd(JsonElement req) {
         try {
+            System.err.println("STRATAGY ddd");
             Cards c = getMyCards(req);
             int r = GetRate.get(c.getCarts());
 
@@ -57,6 +58,7 @@ public class Player {
 
     static int fff(JsonElement req) {
         try {
+            System.err.println("STRATAGY fff");
             int round = req.getAsJsonObject().get("round").getAsInt();
             int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt();
 
@@ -85,6 +87,7 @@ public class Player {
 
     static int newstr(JsonElement req) {
         try {
+            System.err.println("NEW STRATAGY");
             Cards c = getMyCards(req);
             int round = req.getAsJsonObject().get("round").getAsInt();
             int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt() - getPlayerBet(req, "Maverik");
@@ -114,14 +117,14 @@ public class Player {
                 }
             }
 
-            int ourBet = 200;
+            int ourBet = 100;
 
             if (round == 0) {
 
             } else if (round < 3) {
-                ourBet = 500;
+                ourBet = 200;
             } else {
-                ourBet = 1000;
+                ourBet = 250;
             }
 
             ourBet = ourBet - getPlayerBet(req, "Maverik");
