@@ -2,7 +2,9 @@ package org.leanpoker.player;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+
+import java.util.List;
+import java.util.SortedSet;
 
 
 public class Player {
@@ -73,6 +75,11 @@ public class Player {
             }
         }
         return null;
+    }
+
+    public int getRating(Cards cards) {
+        return cards.getRating();
+
     }
 
 }
