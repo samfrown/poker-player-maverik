@@ -55,7 +55,7 @@ public class Card {
     }
 
     public String toString() {
-        return String.format("{\"rank\":\"{}\",\"suit\":\"{}\"}", rankStr, suit);
+        return String.format("{\"rank\":\"%s\",\"suit\":\"%s\"}", rankStr, suit);
     }
 
 }
