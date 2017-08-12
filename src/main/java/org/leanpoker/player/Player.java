@@ -95,8 +95,8 @@ public class Player {
             System.err.println("MAXBET = " + Integer.toString(maxBet));
 
 
-            if (c.getRating() == 0) {
-                if (round == 0 && numPlayers(req) == 2) {
+            if (c.getRating() < 1 ) {
+                if (round == 0 && numPlayers(req) == 2 && ourIn < 50) {
                     System.err.println("Maverik num = 2");
 
                     return 50;
