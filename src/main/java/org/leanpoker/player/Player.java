@@ -85,17 +85,17 @@ public class Player {
     public static Cards getMyCards(JsonElement request) {
         Cards my = new Cards();
 
-        try {
-            my.add(request.getAsJsonObject().get("community_cards").getAsJsonArray());
-        } catch (Exception e) {
-            System.err.println("community_cards not found");
-        }
-
         JsonElement player = getMyPlayer(request);
         if ( player != null ) {
             my.add(player.getAsJsonObject().get("hole_cards").getAsJsonArray());
         } else {
             System.err.println("My player not found");
+        }
+
+        try {
+            my.add(request.getAsJsonObject().get("community_cards").getAsJsonArray());
+        } catch (Exception e) {
+            System.err.println("community_cards not found");
         }
         return my;
     }
