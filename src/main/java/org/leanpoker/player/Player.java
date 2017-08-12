@@ -131,6 +131,7 @@ public class Player {
             }
 
             ourBet = ourBet - getPlayerBet(req, "Maverik");
+            System.err.println("????? = " + Integer.toString(ourBet));
             if (maxBet > ourBet) {
                 System.err.println("XXXX = " + Integer.toString(maxBet));
                 return maxBet;
