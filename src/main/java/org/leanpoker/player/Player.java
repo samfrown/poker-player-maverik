@@ -41,7 +41,7 @@ public class Player {
             } else if (round < 3) {
                 ourBet = 500;
             } else {
-                ourBet = 1000;
+                ourBet = 101;
             }
 
             if (maxBet > ourBet) {
@@ -62,14 +62,14 @@ public class Player {
             int round = req.getAsJsonObject().get("round").getAsInt();
             int maxBet = req.getAsJsonObject().get("current_buy_in").getAsInt();
 
-            int ourBet = 200;
+            int ourBet = 100;
 
             if (round == 0) {
 
             } else if (round < 3) {
-                ourBet = 500;
+                ourBet = 200;
             } else {
-                ourBet = 1000;
+                ourBet = 500;
             }
 
             if (maxBet > ourBet) {
@@ -81,7 +81,7 @@ public class Player {
         } catch (Exception e) {
             System.err.println(e.getMessage());
 
-            return 1000;
+            return 102;
         }
     }
 
@@ -133,7 +133,7 @@ public class Player {
                 System.err.println("XXXX = " + Integer.toString(maxBet));
                 return maxBet;
             } else {
-                System.err.println("OURBET = " + Integer.toString(maxBet));
+                System.err.println("OURBET = " + Integer.toString(ourBet));
                 return ourBet;
             }
 
