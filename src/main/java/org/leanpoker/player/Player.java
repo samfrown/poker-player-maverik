@@ -3,9 +3,6 @@ package org.leanpoker.player;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 
-import java.util.List;
-import java.util.SortedSet;
-
 
 public class Player {
 
@@ -51,7 +48,7 @@ public class Player {
             }
 
         }catch (Exception e) {
-
+            System.err.println(e.getMessage());
             return fff(req);
         }
     }
