@@ -11,7 +11,12 @@ public class Player {
     static final String NAME = "Maverik";
 
     public static int betRequest(JsonElement request) {
+<<<<<<< fab76a25d90b802b8483f6ff6307da9533080b1b
+        System.err.println(request.toString());
+        return ddd(request);
+=======
         return newstr(request);
+>>>>>>> wfwf
     }
 
     public static void showdown(JsonElement game) {
@@ -92,12 +97,7 @@ public class Player {
             }
 
             if (c.getRating() == 1) {
-                int playerBet = getPlayerBet(req, "Wise Kaa 2");
-                if (playerBet > 4) {
-                    return 0;
-                } else {
-                    return maxBet;
-                }
+                return maxBet;
             }
 
             int ourBet = 200;
