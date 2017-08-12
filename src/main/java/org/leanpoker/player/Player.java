@@ -165,7 +165,7 @@ public class Player {
         JsonArray players = request.getAsJsonObject().get("players").getAsJsonArray();
         for (JsonElement player: players) {
             if (player.getAsJsonObject().get("name").getAsString().equalsIgnoreCase(NAME)) {
-                player.getAsJsonObject()
+                
             }
         }
     }
